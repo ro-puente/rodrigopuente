@@ -1,19 +1,23 @@
 <?php
 
-if($_POST['email'] && $_POST['name'] && $_POST['message'] && !empty($_POST['email']) && !empty($_POST['name']) && !empty($_POST['message'])){
+try {
+	$respuesta = array("error" => false, "mensaje" => "");
+	if($_POST['email'] && $_POST['name'] && $_POST['message'] && !empty($_POST['email']) && !empty($_POST['name']) && !empty($_POST['message'])){
 
-	$to      = 'rodrigoramos89@gmail.com';
-	$subject = 'the subject';
-	$message = 'hello';
-	$headers = 'From: webmaster@example.com' . "\r\n" .
-	    'Reply-To: webmaster@example.com' . "\r\n" .
-	    'X-Mailer: PHP/' . phpversion();
+		$to       = 'rodrigoramos89@gmail.com';
+		$subject  = 'Nuevo correo en RodrigoPuente.com';
+		$message  = strip_tags($_POST['name'])."\r\n".strip_tags($_POST['email'])."\r\n".strip_tags($_POST['message'])."\r\n";
 
-	mail($to, $subject, $message, $headers);
+		$mail = mail($to, $subject, $message);
+		if(!$mail) throw new \Exception("Hubo un error...");
+		 
 
-}else{
-	echo "UFFFF";
+	}else{
+		throw new \Exception("Te faltó algo...");
+	}
+}catch(\Exception $e){
+	$respuesta["mensaje"] = $e->getMessage();
 }
-var_dump($_POST['email']);
-var_dump($_POST['name']);
-var_dump($_POST['message']);
+
+header('Content-Type: application/json');
+echo json_encode($respuesta);

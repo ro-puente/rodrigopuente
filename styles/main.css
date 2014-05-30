@@ -208,3 +208,5 @@ header {
     font-size: 110%;
     font-style: normal;
     font-family:   "Lato", sans-serif, sans-serif; }
+  #contact-me form .error {
+    outline: #EC4848 2px solid; }

@@ -152,7 +152,7 @@
                         <input type="email" name="email" placeholder="Email" class="pull-right" required>
                         <textarea name="message" placeholder="Mensaje" rows="3" columns="3" required></textarea>
 
-                        <a href="#" class="btn btn-send">ENVIAR</a>
+                        <a href="#" class="btn btn-send">ENVIAR <i class="fa fa-circle-o-notch fa-spin" style="display: none;"></i></a>
 
                         </textarea>
                     </form>
@@ -206,26 +206,49 @@
 
                 }, 4000);
 
-                $(".btn-send").on("click", function(e){
-                	console.log("hola");
-                	e.preventDefault();
-                	$.ajax({
-                		url: '/send-mail.php',
-                		type: 'POST',
-                		data: $("form").serializeArray()
-                	})
-                	.done(function(data) {
-                		console.dir(data);
-                		console.log("success");
-                	})
-                	.fail(function() {
-                		console.log("error");
-                	})
-                	.always(function() {
-                		console.log("complete");
-                	});
+                $enviar = true;
 
+                $(".btn-send").on("click", function(e){
+                	e.preventDefault();
+                    if(validate() && $enviar){
+                        $enviar = false;
+                        $(".fa-spin").css('display', 'block');
+                        $.ajax({
+                            url: '/send-mail.php',
+                            type: 'POST',
+                            data: $("form").serializeArray()
+                        })
+                        .done(function(data) {
+                            if(!data.error){
+                                $(".btn-send").text("¡Gracias por el mensaje!");
+                                $('form').trigger("reset");
+                            }else{
+                                $(".btn-send").text("UFFF, mejor mandame un tweet...");
+                            }
+                        })
+                        .fail(function() {
+                            $(".btn-send").text("UFFF, mejor mandame un tweet...");
+                        })
+                        .always(function() {
+                            $(".fa-spin").css('display', 'block');
+                            $enviar = true;
+                        });
+                    }
                 });
+
+                function validate(){
+                    enviar = true;
+                    
+                    $("form input, form textarea").removeClass("error");
+                    $("form input, form textarea").each(function(){
+                        if( $.trim($(this).val()) == "" ){
+                            $(this).addClass("error");
+                            enviar = false;
+                        }
+                    })
+
+                    return enviar;
+                }
             });
 
     </script>

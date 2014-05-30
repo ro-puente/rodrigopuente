@@ -120,5 +120,9 @@ header {
 			border: none;
 			@include font($serif, 110%, 300, normal);
 		}
+
+		.error {
+			outline: #EC4848 2px solid; 
+		}
 	}
 }
