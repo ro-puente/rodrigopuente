@@ -1,0 +1,120 @@
+// bower:scss
+// endbower
+
+$sans-serif: 'Oswald', sans-serif;
+$serif: 'Lato', sans-serif;
+
+@import 'mixins';
+@import 'base';
+@import 'grid';
+@import 'commons';
+
+nav {
+	position: fixed;
+	right: 2%;
+	top: 2%;
+
+	a {
+		color: #0B486B;
+		@include font($serif, 130%, 400, normal);
+	}
+}
+
+header {
+	padding-bottom: 40px;
+	background: #CFF09E;
+
+	h1 {
+		@include font($sans-serif, 300%, 700, normal);
+	}
+
+	h2 {
+		@include font($sans-serif, 230%, 700, normal);
+	}
+}
+
+#who-am-i {
+	padding: 40px;
+	background: #A8DBA8;
+
+	p {
+		@include font($serif, 170%, 100, normal);
+	}
+
+	ul {
+		@include font($serif, 170%, 300, normal);
+	}
+
+	.item {
+		display: inline-block;
+	    position: relative;
+
+	    .inside {
+	    	cursor: hand;
+	    	cursor: pointer;
+	    	height: 100%;
+	    	position: absolute;
+	    	top: 0;
+	    	left: 0;
+	    	opacity: 0;
+	    	width: 100%;
+	    	z-index: 2;
+	    	@include transition(all, 0.3s, linear);
+
+	    	p, h3 {
+	    		text-align: left;
+	    		color: white;
+	    		padding: 0 5%;
+	    	}
+
+	    	p {
+	    		@include font($serif, 100%, 300, normal);
+	    	}
+
+    		h3 {
+    			margin: 10px 0 10px 0 !important;
+    			@include font($serif, 130%, 400, normal);
+    		}
+
+	    	&:hover {
+	    		background: rgba(11, 72, 107, 0.95);
+	    		opacity: 100;
+	    	}
+	    }
+	}
+}
+
+#contact-me {
+	padding: 40px;
+	background: #79BD9A;
+
+	p {
+		margin: 20px;
+		@include font($serif, 170%, 300, normal);
+	}
+
+	a {
+		color: #0B486B;
+		text-decoration: none;
+		@include font($sans-serif, 160%, 700, normal);
+	}
+
+	form {
+
+		input {
+			width: 47%;
+			padding: 1%;
+			border: none;
+			@include font($serif, 110%, 300, normal);
+		}
+
+		textarea {
+			width: 98%;
+			height: 100px;
+			padding: 1%;
+			margin: 5px 0;
+			border: none;
+			@include font($serif, 110%, 300, normal);
+		}
+	}
+}

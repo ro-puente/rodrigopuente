@@ -1,0 +1,205 @@
+@charset "UTF-8";
+body {
+  margin: 0;
+  padding: 0;
+  position: relative;
+  color: #0B486B;
+  font-size: 16px; }
+
+h1, h2, h3, h4, h5, h5 {
+  margin: 1%;
+  padding: 0; }
+
+p {
+  line-height: 1.5; }
+
+ul {
+  padding: 0;
+  margin: 0 0 35px 0; }
+  ul li {
+    list-style-type: none; }
+
+.btn {
+  color: white !important;
+  display: block;
+  background: #3B8686;
+  -webkit-transition: all 0.3s linear;
+  -moz-transition: all 0.3s linear;
+  -ms-transition: all 0.3s linear;
+  -o-transition: all 0.3s linear;
+  transition: all 0.3s linear; }
+  .btn:hover {
+    background: #0B486B; }
+
+.quarter {
+  width: 23%;
+  padding: 1%; }
+
+.fifty {
+  width: 48%;
+  padding: 1%; }
+
+.fifty-quarter {
+  width: 73%;
+  padding: 1%; }
+
+.thirty-three {
+  width: 31%;
+  margin: 1%; }
+
+.hundred {
+  width: 98%;
+  padding: 1%;
+  clear: both; }
+
+.item-center {
+  display: block;
+  margin: 0 auto; }
+
+.sp-quarter {
+  margin-left: 25%; }
+
+.pull-right {
+  float: right; }
+
+.pull-left {
+  float: left; }
+
+.clearfix {
+  zoom: 1; }
+  .clearfix:before, .clearfix:after {
+    content: "\0020";
+    display: block;
+    height: 0;
+    overflow: hidden; }
+  .clearfix:after {
+    clear: both; }
+
+.text-center {
+  text-align: center; }
+
+.text-right {
+  text-align: right; }
+
+.text-left {
+  text-align: left; }
+
+.text-justify {
+  text-align: justify; }
+
+.container {
+  margin: 0 auto;
+  max-width: 960px; }
+
+.full-image {
+  width: 100%; }
+
+nav {
+  position: fixed;
+  right: 2%;
+  top: 2%; }
+  nav a {
+    color: #0B486B;
+    font-weight: 400;
+    font-size: 130%;
+    font-style: normal;
+    font-family:   "Lato", sans-serif, sans-serif; }
+
+header {
+  padding-bottom: 40px;
+  background: #CFF09E; }
+  header h1 {
+    font-weight: 700;
+    font-size: 300%;
+    font-style: normal;
+    font-family: "Oswald", sans-serif, sans-serif; }
+  header h2 {
+    font-weight: 700;
+    font-size: 230%;
+    font-style: normal;
+    font-family: "Oswald", sans-serif, sans-serif; }
+
+#who-am-i {
+  padding: 40px;
+  background: #A8DBA8; }
+  #who-am-i p {
+    font-weight: 100;
+    font-size: 170%;
+    font-style: normal;
+    font-family:   "Lato", sans-serif, sans-serif; }
+  #who-am-i ul {
+    font-weight: 300;
+    font-size: 170%;
+    font-style: normal;
+    font-family:   "Lato", sans-serif, sans-serif; }
+  #who-am-i .item {
+    display: inline-block;
+    position: relative; }
+    #who-am-i .item .inside {
+      cursor: hand;
+      cursor: pointer;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      opacity: 0;
+      width: 100%;
+      z-index: 2;
+      -webkit-transition: all 0.3s linear;
+      -moz-transition: all 0.3s linear;
+      -ms-transition: all 0.3s linear;
+      -o-transition: all 0.3s linear;
+      transition: all 0.3s linear; }
+      #who-am-i .item .inside p, #who-am-i .item .inside h3 {
+        text-align: left;
+        color: white;
+        padding: 0 5%; }
+      #who-am-i .item .inside p {
+        font-weight: 300;
+        font-size: 100%;
+        font-style: normal;
+        font-family:   "Lato", sans-serif, sans-serif; }
+      #who-am-i .item .inside h3 {
+        margin: 10px 0 10px 0 !important;
+        font-weight: 400;
+        font-size: 130%;
+        font-style: normal;
+        font-family:   "Lato", sans-serif, sans-serif; }
+      #who-am-i .item .inside:hover {
+        background: rgba(11, 72, 107, 0.95);
+        opacity: 100; }
+
+#contact-me {
+  padding: 40px;
+  background: #79BD9A; }
+  #contact-me p {
+    margin: 20px;
+    font-weight: 300;
+    font-size: 170%;
+    font-style: normal;
+    font-family:   "Lato", sans-serif, sans-serif; }
+  #contact-me a {
+    color: #0B486B;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 160%;
+    font-style: normal;
+    font-family: "Oswald", sans-serif, sans-serif; }
+  #contact-me form input {
+    width: 47%;
+    padding: 1%;
+    border: none;
+    font-weight: 300;
+    font-size: 110%;
+    font-style: normal;
+    font-family:   "Lato", sans-serif, sans-serif; }
+  #contact-me form textarea {
+    width: 98%;
+    height: 100px;
+    padding: 1%;
+    margin: 5px 0;
+    border: none;
+    font-weight: 300;
+    font-size: 110%;
+    font-style: normal;
+    font-family:   "Lato", sans-serif, sans-serif; }
