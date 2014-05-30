@@ -34,7 +34,7 @@ header {
 }
 
 #who-am-i {
-	padding: 40px;
+	padding: 40px 0 70px 0;
 	background: #A8DBA8;
 
 	p {
@@ -69,6 +69,10 @@ header {
 
 	    	p {
 	    		@include font($serif, 100%, 300, normal);
+
+	    		span {
+	    			@include font($serif, 100%, 400, normal);
+	    		}
 	    	}
 
     		h3 {
@@ -77,7 +81,7 @@ header {
     		}
 
 	    	&:hover {
-	    		background: rgba(11, 72, 107, 0.95);
+	    		background: rgba(11, 72, 107, 0.9);
 	    		opacity: 100;
 	    	}
 	    }

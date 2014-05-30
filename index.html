@@ -60,6 +60,8 @@
                     		<h3>Steve Aoki</h3>
                         <p>Activación donde te tomabas una foto
                         haciendo el #aokijump y la imagen pasaba en una galería que estaba sobre el escenario.</p>
+                        <p><span>Cliente:</span> Miller MGD</p>
+                        <p><span>Desarrollo:</span> Happy Punk Panda</p>
                     </div>
                 </div>
 
@@ -68,6 +70,8 @@
                     <div class="inside">
                     		<h3>Chevrolet Trax</h3>
                         <p>Campaña digital donde había que descubrir la locación de la Chevrolet Trax para ganar puntos y ganarte la camioneta. Todo la dinámica se hizo a través del sitio.</p>
+                        <p><span>Agencia:</span> Ogilvy & Mather</p>
+                        <p><span>Desarrollo:</span> Happy Punk Panda</p>
                     </div>
                 </div>
                 <div class="item thirty-three">
@@ -75,6 +79,8 @@
                     <div class="inside">
                     		<h3>Pilsener Oktoberfest</h3>
                         <p>Activación digital donde hacías tu jarra personalizada y tus amigos te la llenaban para que pudieras recibirla en el evento. Contó con más de trece mil usuarios y se entregaron mil jarras en el evento.</p>
+                        <p><span>Agencia:</span> Ogilvy & Mather</p>
+                        <p><span>Desarrollo:</span> Happy Punk Panda</p>
                     </div>
                 </div>
                 <div class="item thirty-three">
@@ -82,6 +88,8 @@
                     <div class="inside">
                     		<h3>Forever 21</h3>
                         <p>Lotería de tweets para la apertura de Forever 21. Se trackearon aproximadamente treinta mil tuits que se asociaban a tu perfil en la app y te daba la oportunidad de ganarte gift cards.</p>
+                        <p><span>Cliente:</span> Multiplaza</p>
+                        <p><span>Desarrollo:</span> Happy Punk Panda</p>
                     </div>
                 </div>
 
@@ -90,6 +98,8 @@
                     <div class="inside">
                     		<h3>Hunger Games</h3>
                         <p>Facebook tab para el lanzamiento de la película en latinoamérica. Los usuarios creaban su carné que los acreditaba como tributos y competían por ver cuál país contaba con más fans de la película.</p>
+                        <p><span>Agencia:</span> IMG</p>
+                        <p><span>Desarrollo:</span> Happy Punk Panda</p>
                     </div>
                 </div>
 
@@ -98,6 +108,8 @@
                     <div class="inside">
                     		<h3>Miller Lite Football Challenge</h3>
                         <p>Quiniela de resultados para la temporada regular de la NFL. Los usuarios ingresaban sus resultados y semanalmente había premios para los competidores con mayores puntajes.</p>
+                        <p><span>Cliente:</span> Miller Lite</p>
+                        <p><span>Desarrollo:</span> Happy Punk Panda</p>
                     </div>
                 </div>
                 <div class="item thirty-three">
@@ -105,6 +117,8 @@
                     <div class="inside">
                     		<h3>Mis Cheros FC</h3>
                         <p>Campaña de Pilsener donde armabas un equipo con tus amigos de Facebook y competías por alcanzar la barra más grande y así ganarte un viaje para ir a ver a la Azulita al Mundial Sub20.</p>
+                        <p><span>Agencia:</span> Ogilvy & Mather</p>
+                        <p><span>Desarrollo:</span> Happy Punk Panda</p>
                     </div>
                 </div>
                 <div class="item thirty-three">
@@ -112,6 +126,8 @@
                     <div class="inside">
                     		<h3>Spirit Promérica</h3>
                         <p>Se buscaba crear expectación a nivel regional con la nueva línea de tarjetas de crédito Spirit. Se creó una plataforma que regalaba millas a las personas que referían a sus amigos de Twitter y Facebook al sitio.</p>
+                        <p><span>Agencia:</span> CreaDraft FCB</p>
+                        <p><span>Desarrollo:</span> Happy Punk Panda</p>
                     </div>
                 </div>
 
@@ -134,7 +150,7 @@
                     <form>
                         <input type="text" name="name" placeholder="Nombre" class="pull-left" required>
                         <input type="email" name="email" placeholder="Email" class="pull-right" required>
-                        <textarea placeholder="Mensaje" rows="3" columns="3" required></textarea>
+                        <textarea name="message" placeholder="Mensaje" rows="3" columns="3" required></textarea>
 
                         <a href="#" class="btn btn-send">ENVIAR</a>
 
@@ -189,6 +205,27 @@
                     }
 
                 }, 4000);
+
+                $(".btn-send").on("click", function(e){
+                	console.log("hola");
+                	e.preventDefault();
+                	$.ajax({
+                		url: '/send-mail.php',
+                		type: 'POST',
+                		data: $("form").serializeArray()
+                	})
+                	.done(function(data) {
+                		console.dir(data);
+                		console.log("success");
+                	})
+                	.fail(function() {
+                		console.log("error");
+                	})
+                	.always(function() {
+                		console.log("complete");
+                	});
+
+                });
             });
 
     </script>

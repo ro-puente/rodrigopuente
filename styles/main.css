@@ -14,7 +14,7 @@ p {
   line-height: 1.5; }
 
 ul {
-  padding: 0;
+  padding: 40px 0;
   margin: 0 0 35px 0; }
   ul li {
     list-style-type: none; }
@@ -120,7 +120,7 @@ header {
     font-family: "Oswald", sans-serif, sans-serif; }
 
 #who-am-i {
-  padding: 40px;
+  padding: 40px 0 70px 0;
   background: #A8DBA8; }
   #who-am-i p {
     font-weight: 100;
@@ -159,6 +159,11 @@ header {
         font-size: 100%;
         font-style: normal;
         font-family:   "Lato", sans-serif, sans-serif; }
+        #who-am-i .item .inside p span {
+          font-weight: 400;
+          font-size: 100%;
+          font-style: normal;
+          font-family:   "Lato", sans-serif, sans-serif; }
       #who-am-i .item .inside h3 {
         margin: 10px 0 10px 0 !important;
         font-weight: 400;
@@ -166,7 +171,7 @@ header {
         font-style: normal;
         font-family:   "Lato", sans-serif, sans-serif; }
       #who-am-i .item .inside:hover {
-        background: rgba(11, 72, 107, 0.95);
+        background: rgba(11, 72, 107, 0.9);
         opacity: 100; }
 
 #contact-me {
